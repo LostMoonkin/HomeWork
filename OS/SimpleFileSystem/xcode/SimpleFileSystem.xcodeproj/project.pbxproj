@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		7060B7685A404862A730460F /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 757F9F81983E42F8B06E8AD4 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				B7871691CF914952939B7227 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		79109468CBD246388F3D2056 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D6C4934E6B054DB48FF441BE /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				2E0E1223DDC64044915562B4 /* CMake Rules */,
+			);
+			dependencies = (
+				7A8A6A2FDE2840B088A721A0 /* PBXTargetDependency */,
+				56A7F146896846ACB2E53FC0 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		1C514757220C48C39CFEF228 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/SuperBlock.h */ = {isa = PBXBuildFile; fileRef = 86F9787D6F3146BE93F7D5B3 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/SuperBlock.h */; settings = {COMPILER_FLAGS = ""; }; };
+		370F6904487E4FD494261C0A /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/User.h */ = {isa = PBXBuildFile; fileRef = 46E2EF47AD9A458EAC146D9D /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/User.h */; settings = {COMPILER_FLAGS = ""; }; };
+		41A1046B81044FF585017360 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/Main.cpp */ = {isa = PBXBuildFile; fileRef = E4D823E3101C43AEA5798552 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/Main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		5AAFA456436747B1B165AC9D /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = F5E613C5685248679ED1033F /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/CMakeLists.txt */; settings = {COMPILER_FLAGS = ""; }; };
+		6F4429A4149B4B1AB3BC7655 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/MyExt.h */ = {isa = PBXBuildFile; fileRef = D84C9BF8ECC241AE8CA6BB10 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/MyExt.h */; settings = {COMPILER_FLAGS = ""; }; };
+		839BF5A4BC304A438CC20F54 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/INode.h */ = {isa = PBXBuildFile; fileRef = 1879B3DA661F4A6CA3EBCE68 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/INode.h */; settings = {COMPILER_FLAGS = ""; }; };
+		911A31C2627945569675F0FD /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/FCB.h */ = {isa = PBXBuildFile; fileRef = DCB3AF008D604EFF96C4CD15 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/FCB.h */; settings = {COMPILER_FLAGS = ""; }; };
+		B6262D435502463B9EEFCBA9 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/MyExt.cpp */ = {isa = PBXBuildFile; fileRef = D022DC0661D841678606B314 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/MyExt.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		0922A23698E84C14AA69FAB1 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		2A5E311509204D8C90211B8C = {
+			isa = PBXBuildStyle;
+		};
+		35D00DCE14CE45FDB3C8A257 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		9FF61C0ACF4B4ED791265E3E /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		E268C2E536364781B344ADC2 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		4273D00D6D8B4992B041D262 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC954E9D87C94D3CAD08AD67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7060B7685A404862A730460F;
+			remoteInfo = ZERO_CHECK;
+		};
+		D1577EFF67E049C18A52F176 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC954E9D87C94D3CAD08AD67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7060B7685A404862A730460F;
+			remoteInfo = ZERO_CHECK;
+		};
+		E8B96DB00B1F45FB91269378 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC954E9D87C94D3CAD08AD67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EA1828B11D04F3A8F02D97D;
+			remoteInfo = SimpleFileSystem;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		170AE0EDCFD443AA9DB2CE3F /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		1879B3DA661F4A6CA3EBCE68 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/INode.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = INode.h; path = src/header/INode.h; sourceTree = SOURCE_ROOT; };
+		46E2EF47AD9A458EAC146D9D /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/User.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = User.h; path = src/header/User.h; sourceTree = SOURCE_ROOT; };
+		86F9787D6F3146BE93F7D5B3 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/SuperBlock.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SuperBlock.h; path = src/header/SuperBlock.h; sourceTree = SOURCE_ROOT; };
+		BFD02C9F353D42D49A3E3F0F /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D022DC0661D841678606B314 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/MyExt.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MyExt.cpp; path = src/MyExt.cpp; sourceTree = SOURCE_ROOT; };
+		D84C9BF8ECC241AE8CA6BB10 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/MyExt.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MyExt.h; path = src/MyExt.h; sourceTree = SOURCE_ROOT; };
+		DCB3AF008D604EFF96C4CD15 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/FCB.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = FCB.h; path = src/header/FCB.h; sourceTree = SOURCE_ROOT; };
+		E4D823E3101C43AEA5798552 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/Main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Main.cpp; path = src/Main.cpp; sourceTree = SOURCE_ROOT; };
+		F5E613C5685248679ED1033F /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		F86D763C0A2545A691B14C99 /* SimpleFileSystem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = SimpleFileSystem; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1B43FB505AEA4204BB3D22EA /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				7E29C21061AF4A0EBC87699D /* CMake Rules */,
+				BFD02C9F353D42D49A3E3F0F /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		56F35C9029C5476B83073A1D /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4D823E3101C43AEA5798552 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/Main.cpp */,
+				D022DC0661D841678606B314 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/MyExt.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		72DABF34E853407F90A6817F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7E29C21061AF4A0EBC87699D /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		927A54DE8F80447DB84107B1 /* SimpleFileSystem */ = {
+			isa = PBXGroup;
+			children = (
+				56F35C9029C5476B83073A1D /* Source Files */,
+				A9B52E7A5F83442F8D41EC14 /* Header Files */,
+				F5E613C5685248679ED1033F /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/CMakeLists.txt */,
+			);
+			name = SimpleFileSystem;
+			sourceTree = "<group>";
+		};
+		94956DC8820E4720A47539BB /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				EAB08DF3D743492292B26C3C /* CMake Rules */,
+				170AE0EDCFD443AA9DB2CE3F /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		9B8E879A02594C8A9581D634 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				927A54DE8F80447DB84107B1 /* SimpleFileSystem */,
+				1B43FB505AEA4204BB3D22EA /* ALL_BUILD */,
+				94956DC8820E4720A47539BB /* ZERO_CHECK */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		A9B52E7A5F83442F8D41EC14 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				D84C9BF8ECC241AE8CA6BB10 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/MyExt.h */,
+				DCB3AF008D604EFF96C4CD15 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/FCB.h */,
+				1879B3DA661F4A6CA3EBCE68 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/INode.h */,
+				86F9787D6F3146BE93F7D5B3 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/SuperBlock.h */,
+				46E2EF47AD9A458EAC146D9D /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/header/User.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		BDCB34C3E9B4422F80097EA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F86D763C0A2545A691B14C99 /* SimpleFileSystem */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C40832537EED42C6B80B46DA = {
+			isa = PBXGroup;
+			children = (
+				9B8E879A02594C8A9581D634 /* Sources */,
+				72DABF34E853407F90A6817F /* Resources */,
+				BDCB34C3E9B4422F80097EA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EAB08DF3D743492292B26C3C /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2EA1828B11D04F3A8F02D97D /* SimpleFileSystem */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D18206387BD405CB4B1BD05 /* Build configuration list for PBXNativeTarget "SimpleFileSystem" */;
+			buildPhases = (
+				05BFA68457DE431FB5484B0F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AFB3E48FF0B4249BB7C211C /* PBXTargetDependency */,
+			);
+			name = SimpleFileSystem;
+			productName = SimpleFileSystem;
+			productReference = F86D763C0A2545A691B14C99 /* SimpleFileSystem */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC954E9D87C94D3CAD08AD67 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0810;
+			};
+			buildConfigurationList = 192EBFE05329407881287A16 /* Build configuration list for PBXProject "SimpleFileSystem" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				9FF61C0ACF4B4ED791265E3E /* Debug */,
+				35D00DCE14CE45FDB3C8A257 /* Release */,
+				E268C2E536364781B344ADC2 /* MinSizeRel */,
+				0922A23698E84C14AA69FAB1 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = C40832537EED42C6B80B46DA;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				79109468CBD246388F3D2056 /* ALL_BUILD */,
+				2EA1828B11D04F3A8F02D97D /* SimpleFileSystem */,
+				7060B7685A404862A730460F /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E0E1223DDC64044915562B4 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode -f /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		4404A27D3CE14A00A3D673D7 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		B7871691CF914952939B7227 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode -f /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		F1296CFF557B4C7E8646863C = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05BFA68457DE431FB5484B0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41A1046B81044FF585017360 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/Main.cpp */,
+				B6262D435502463B9EEFCBA9 /* /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/src/MyExt.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AFB3E48FF0B4249BB7C211C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7060B7685A404862A730460F /* ZERO_CHECK */;
+			targetProxy = 4273D00D6D8B4992B041D262 /* PBXContainerItemProxy */;
+		};
+		56A7F146896846ACB2E53FC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EA1828B11D04F3A8F02D97D /* SimpleFileSystem */;
+			targetProxy = E8B96DB00B1F45FB91269378 /* PBXContainerItemProxy */;
+		};
+		7A8A6A2FDE2840B088A721A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7060B7685A404862A730460F /* ZERO_CHECK */;
+			targetProxy = D1577EFF67E049C18A52F176 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		053A3DEB6EDB42B4908EB0FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode/build;
+			};
+			name = Release;
+		};
+		0A10E0A609864E03BD597C5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode/build;
+			};
+			name = Debug;
+		};
+		1EDC4690FE5445DCBE78815F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		221FAB5C54484FC9B874E5D5 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode/build;
+			};
+			name = RelWithDebInfo;
+		};
+		4ACF91E53F774573A6AA5A33 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		6EC315875C8C47A4B03C5457 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode/build/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11 -m32     -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SimpleFileSystem;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		7D48D1375A0C4480AB8B788D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode/build/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11 -m32        -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SimpleFileSystem;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		80D31595F786422F9F47327D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode/build/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11 -m32     -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SimpleFileSystem;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		986E17D1A4F14B5F9EA11F1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode/build/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11 -m32     ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SimpleFileSystem;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		9D457AFCFD4A4B11B4401569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		B0E504838E1E4B3CAC0D5CE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		B69968EB07C8471B8D310924 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B9CE32D543414B0989BF6C71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		BA9DD7BA0CCA4C318B271B8B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		DBEB6837376842C2A2EC6485 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode/build;
+			};
+			name = MinSizeRel;
+		};
+		F100129CB4AA465FA157DD17 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lostmoonkin/Desktop/HomeWork/OS_Homework/SimpleFileSystem/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		192EBFE05329407881287A16 /* Build configuration list for PBXProject "SimpleFileSystem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A10E0A609864E03BD597C5C /* Debug */,
+				053A3DEB6EDB42B4908EB0FE /* Release */,
+				DBEB6837376842C2A2EC6485 /* MinSizeRel */,
+				221FAB5C54484FC9B874E5D5 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		757F9F81983E42F8B06E8AD4 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9CE32D543414B0989BF6C71 /* Debug */,
+				9D457AFCFD4A4B11B4401569 /* Release */,
+				B69968EB07C8471B8D310924 /* MinSizeRel */,
+				F100129CB4AA465FA157DD17 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8D18206387BD405CB4B1BD05 /* Build configuration list for PBXNativeTarget "SimpleFileSystem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				986E17D1A4F14B5F9EA11F1E /* Debug */,
+				80D31595F786422F9F47327D /* Release */,
+				6EC315875C8C47A4B03C5457 /* MinSizeRel */,
+				7D48D1375A0C4480AB8B788D /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D6C4934E6B054DB48FF441BE /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0E504838E1E4B3CAC0D5CE9 /* Debug */,
+				1EDC4690FE5445DCBE78815F /* Release */,
+				BA9DD7BA0CCA4C318B271B8B /* MinSizeRel */,
+				4ACF91E53F774573A6AA5A33 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC954E9D87C94D3CAD08AD67 /* Project object */;
+}
