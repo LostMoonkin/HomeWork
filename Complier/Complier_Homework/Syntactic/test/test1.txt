@@ -1,0 +1,1 @@
+begin a := 9; x := 2 * 3; b := a + x; end#
