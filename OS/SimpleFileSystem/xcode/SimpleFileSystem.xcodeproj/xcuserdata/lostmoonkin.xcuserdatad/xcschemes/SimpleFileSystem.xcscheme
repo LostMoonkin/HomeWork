@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2EA1828B11D04F3A8F02D97D"
+               BlueprintIdentifier = "CF22BD4435BD4A2F8B0E7D7F"
                BuildableName = "SimpleFileSystem"
                BlueprintName = "SimpleFileSystem"
-               ReferencedContainer = "container:xcode/SimpleFileSystem.xcodeproj">
+               ReferencedContainer = "container:Xcode/SimpleFileSystem.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2EA1828B11D04F3A8F02D97D"
+            BlueprintIdentifier = "CF22BD4435BD4A2F8B0E7D7F"
             BuildableName = "SimpleFileSystem"
             BlueprintName = "SimpleFileSystem"
-            ReferencedContainer = "container:xcode/SimpleFileSystem.xcodeproj">
+            ReferencedContainer = "container:Xcode/SimpleFileSystem.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2EA1828B11D04F3A8F02D97D"
+            BlueprintIdentifier = "CF22BD4435BD4A2F8B0E7D7F"
             BuildableName = "SimpleFileSystem"
             BlueprintName = "SimpleFileSystem"
-            ReferencedContainer = "container:xcode/SimpleFileSystem.xcodeproj">
+            ReferencedContainer = "container:Xcode/SimpleFileSystem.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2EA1828B11D04F3A8F02D97D"
+            BlueprintIdentifier = "CF22BD4435BD4A2F8B0E7D7F"
             BuildableName = "SimpleFileSystem"
             BlueprintName = "SimpleFileSystem"
-            ReferencedContainer = "container:xcode/SimpleFileSystem.xcodeproj">
+            ReferencedContainer = "container:Xcode/SimpleFileSystem.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

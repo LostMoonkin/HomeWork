@@ -2,7 +2,7 @@
 // Created by 叶梅北宁 on 11/2/16.
 //
 
-#include "MyExt.h"
+#include "header/MyExt.h"
 
 MyExt::MyExt(const char * fileName) : blockNum(BLOCK_NUM), blockSize(BLOCK_SIZE) {
 
@@ -158,20 +158,30 @@ void MyExt::CreateMyExt() {
 
     //init user
     printf("Init User:\n");
-    printf("Input UserName:");
+    printf("Input UserName(0 < len < 10):");
     fgets(user.userName, sizeof(user.userName), stdin);
     if(user.userName[strlen(user.userName) - 1] == '\n') {
         user.userName[strlen(user.userName) - 1] = '\0';
     }
     system("stty -echo");
-    printf("Input PassWord:");
-    fgets(user.passWord, sizeof(user.passWord), stdin);
-    if(user.passWord[strlen(user.passWord) - 1] == '\n') {
-        user.passWord[strlen(user.passWord) - 1] = '\0';
+    printf("Input PassWord(0 < len < 16):");
+    char password[16];
+    fgets(password, sizeof(password), stdin);
+    if(password[strlen(password) - 1] == '\n') {
+        password[strlen(password) - 1] = '\0';
     }
+
+    unsigned char * src = (unsigned char *)malloc(strlen(password) + strlen(salty) + 1);
+    strcpy((char *) src, password);
+    strcat((char *) src, salty);
+    MD5 iMD5;
+    iMD5.GenerateMD5(src, strlen((char *)src));
+    memset(user.passWord, 0, strlen(user.passWord));
+    strcpy(user.passWord, iMD5.ToString().c_str());
+
     system("stty echo");
     printf("\n");
-    printf("Init User Success!\nusername:%s\npassword:%s\n", user.userName, user.passWord);
+    printf("Init User Success!\nusername:%s\npassword:%s\n", user.userName, password);
     SetUser(user);
 
     printf("\nInit Super Block...\n");
@@ -204,7 +214,7 @@ void MyExt::CreateMyExt() {
     strcpy(currentINode.name, "/");
     currentINode.attr = currentINode.DIR;
     currentINode.parent = iNodeSize;
-    currentINode.length = 0;
+    currentINode.length = 1;
     currentINode.type = currentINode.READ_ONLY;
     time(&(currentINode.createdTime));
     time(&(currentINode.lastChangeTime));
@@ -708,15 +718,37 @@ void MyExt::GetFCBLink(FCBLink &curLink, INode iNode) {
     curLink = new FCBLinkNode();
     GetFCBLinkNode(curLink, iNode);
 
-    if (iNode.length <= 0) {
-        return;
-    }
-
     unsigned int index, blockId, fileItem;
     INode fileINode;
     FCBLink fcbLink, link = curLink;
     unsigned long len = iNode.length;
     const int itemCount = blockSize / itemSize;
+    
+    GetINode(&fileINode, iNode.id);
+    memset(fileINode.name, 0, sizeof(fileINode.name));
+    fileINode.name[0] = '.';
+    fcbLink = new FCBLinkNode();
+    GetFCBLinkNode(fcbLink, fileINode);
+    link->next = fcbLink;
+    link = fcbLink;
+    len --;
+    
+    if (iNode.id) {
+        GetINode(&fileINode, iNode.parent);
+        memset(fileINode.name, 0, sizeof(fileINode.name));
+        fileINode.name[0] = '.';
+        fileINode.name[1] = '.';
+        fcbLink = new FCBLinkNode();
+        GetFCBLinkNode(fcbLink, fileINode);
+        link->next = fcbLink;
+        link = fcbLink;
+        len --;
+    }
+    
+    if (iNode.length <= 0) {
+        return;
+    }
+    
 
     for (int i = 0; i < DIRECT_INDEX; i++) {
         blockId = iNode.addr[i];
@@ -899,6 +931,14 @@ void MyExt::Ls_l() {
     while (link) {
         iNodePointer->id = link->fcb.id;
         GetINode(iNodePointer, iNodePointer->id);
+        if (iNodePointer->id == currentINode.id) {
+            iNodePointer->name[0] = '.';
+            iNodePointer->name[1] = 0;
+        } else if (currentINode.id != 0 && iNodePointer->id == currentINode.parent) {
+            iNodePointer->name[0] = '.';
+            iNodePointer->name[1] = '.';
+            iNodePointer->name[2] = 0;
+        }
         ShowFileDetail(iNodePointer);
 
         link = link->next;
@@ -935,6 +975,13 @@ void MyExt::BackToRoot() {
 int MyExt::SetToChild(const char *dirName) {
 
     unsigned int id = FindChildINode(currentFCBLink, dirName);
+    
+    if (!strncmp(dirName, "..", 2)) {
+        return BackToParent();
+    }
+    if (!strncmp(dirName, ".", 1)) {
+        return 0;
+    }
 
     if (id > 0) {
 
@@ -964,145 +1011,178 @@ int MyExt::SetToChild(const char *dirName) {
 }
 
 int MyExt::Cd(const char *dirName) {
-
     string tempPath = currentPath;
     char * tempDirName;
     tempDirName = (char *) calloc(strlen(dirName), sizeof(char));
     strcpy(tempDirName, dirName);
-
-    if (!strcmp(dirName, ".")) {
-        return 0;
-    }
-
-    if (!strcmp(dirName, "..")) {
-
-        if (BackToParent()) {
-            return 0;
-        } else {
-            return -1;
+    
+    char * p = strtok(tempDirName, "/");
+    unsigned int flag = 0;
+    
+    for (; p; p = strtok(NULL, "/")) {
+    
+        if (SetToChild(p)) {
+            flag = 1;
+            break;
         }
     }
-
-    if (!strncmp(dirName, "./", 2) || (dirName[0] != '.' && dirName[0] != '/')) {
-
-        if (!strncmp(dirName, "./", 2)) {
-            tempDirName += 2;
-        }
-
-        char * p = strtok(tempDirName, "/");
-        unsigned int flag = 0;
-
-        for (; p; p = strtok(NULL, "/")) {
-
-            if (!strcmp(p, ".")) {
-                continue;
-            }
-
-            if (!strcmp(p, "..")) {
-                if (BackToParent()) {
-                    flag = 1;
-                    break;
-                } else {
-                    continue;
-                }
-            }
-
-            if (SetToChild(p)) {
-                flag = 1;
-                break;
-            }
-        }
-
-        if (flag) {
-            Cd(tempPath.c_str());
-            return -1;
-        }
-
-        return 0;
+    
+    if (flag) {
+        Cd(tempPath.c_str());
+        return -1;
     }
-
-    if (!strncmp(dirName, "../", 3)) {
-
-        tempDirName += 3;
-
-        if (BackToParent()) {
-            Cd(tempPath.c_str());
-        }
-
-        char * p = strtok(tempDirName, "/");
-        unsigned int flag = 0;
-
-        for (; p; p = strtok(NULL, "/")) {
-
-            if (!strcmp(p, ".")) {
-                continue;
-            }
-
-            if (!strcmp(p, "..")) {
-                if (BackToParent()) {
-                    flag = 1;
-                    break;
-                } else {
-                    continue;
-                }
-            }
-
-            if (SetToChild(p)) {
-                flag = 1;
-                break;
-            }
-        }
-
-        if (flag) {
-            Cd(tempPath.c_str());
-            return -1;
-        }
-
-        return 0;
-    }
-
-    if (!strncmp(dirName, "/", 1)) {
-
-        tempDirName += 1;
-
-        BackToRoot();
-
-        char * p = strtok(tempDirName, "/");
-        unsigned int flag = 0;
-
-        for (; p; p = strtok(NULL, "/")) {
-
-            if (!strcmp(p, ".")) {
-                continue;
-            }
-
-            if (!strcmp(p, "..")) {
-                if (BackToParent()) {
-                    flag = 1;
-                    break;
-                } else {
-                    continue;
-                }
-            }
-
-            if (SetToChild(p)) {
-                flag = 1;
-                break;
-            }
-        }
-
-        if (flag) {
-            BackToRoot();
-            printf("Unexpected error, back to root!\n");
-            return -1;
-        }
-
-        return 0;
-
-    }
-
+    
     return 0;
 }
+
+int MyExt::Mv(const char * fileName, const char * newFileName) {
+    return 0;
+    
+}
+
+/*
+ * Old Cd
+ */
+//int MyExt::Cd(const char *dirName) {
+//
+//    string tempPath = currentPath;
+//    char * tempDirName;
+//    tempDirName = (char *) calloc(strlen(dirName), sizeof(char));
+//    strcpy(tempDirName, dirName);
+//
+//    if (!strcmp(dirName, ".")) {
+//        return 0;
+//    }
+//
+//    if (!strcmp(dirName, "..")) {
+//
+//        if (BackToParent()) {
+//            return 0;
+//        } else {
+//            return -1;
+//        }
+//    }
+//
+//    if (!strncmp(dirName, "./", 2) || (dirName[0] != '.' && dirName[0] != '/')) {
+//
+//        if (!strncmp(dirName, "./", 2)) {
+//            tempDirName += 2;
+//        }
+//
+//        char * p = strtok(tempDirName, "/");
+//        unsigned int flag = 0;
+//
+//        for (; p; p = strtok(NULL, "/")) {
+//
+//            if (!strcmp(p, ".")) {
+//                continue;
+//            }
+//
+//            if (!strcmp(p, "..")) {
+//                if (BackToParent()) {
+//                    flag = 1;
+//                    break;
+//                } else {
+//                    continue;
+//                }
+//            }
+//
+//            if (SetToChild(p)) {
+//                flag = 1;
+//                break;
+//            }
+//        }
+//
+//        if (flag) {
+//            Cd(tempPath.c_str());
+//            return -1;
+//        }
+//
+//        return 0;
+//    }
+//
+//    if (!strncmp(dirName, "../", 3)) {
+//
+//        tempDirName += 3;
+//
+//        if (BackToParent()) {
+//            Cd(tempPath.c_str());
+//        }
+//
+//        char * p = strtok(tempDirName, "/");
+//        unsigned int flag = 0;
+//
+//        for (; p; p = strtok(NULL, "/")) {
+//
+//            if (!strcmp(p, ".")) {
+//                continue;
+//            }
+//
+//            if (!strcmp(p, "..")) {
+//                if (BackToParent()) {
+//                    flag = 1;
+//                    break;
+//                } else {
+//                    continue;
+//                }
+//            }
+//
+//            if (SetToChild(p)) {
+//                flag = 1;
+//                break;
+//            }
+//        }
+//
+//        if (flag) {
+//            Cd(tempPath.c_str());
+//            return -1;
+//        }
+//
+//        return 0;
+//    }
+//
+//    if (!strncmp(dirName, "/", 1)) {
+//
+//        tempDirName += 1;
+//
+//        BackToRoot();
+//
+//        char * p = strtok(tempDirName, "/");
+//        unsigned int flag = 0;
+//
+//        for (; p; p = strtok(NULL, "/")) {
+//
+//            if (!strcmp(p, ".")) {
+//                continue;
+//            }
+//
+//            if (!strcmp(p, "..")) {
+//                if (BackToParent()) {
+//                    flag = 1;
+//                    break;
+//                } else {
+//                    continue;
+//                }
+//            }
+//
+//            if (SetToChild(p)) {
+//                flag = 1;
+//                break;
+//            }
+//        }
+//
+//        if (flag) {
+//            BackToRoot();
+//            printf("Unexpected error, back to root!\n");
+//            return -1;
+//        }
+//
+//        return 0;
+//
+//    }
+//
+//    return 0;
+//}
 
 int MyExt::CreateFile(const char *fileName, unsigned char attr) {
 
@@ -1130,10 +1210,14 @@ int MyExt::CreateFile(const char *fileName, unsigned char attr) {
             iNodePointer->id = id;
             strcpy(iNodePointer->name, fileName);
             iNodePointer->attr = attr;
+            if (attr == iNodePointer->DIR) {
+                
+            }
             iNodePointer->parent = currentINode.id;
-            iNodePointer->length = 0;
+            iNodePointer->length = iNodePointer->attr == iNodePointer->DIR ? 2 : 0;
             iNodePointer->type = iNodePointer->READ_WRITE;
             time(&iNodePointer->createdTime);
+            time(&iNodePointer->lastChangeTime);
 
             iNodePointer->blockId = blockId;
 
@@ -1178,7 +1262,7 @@ void MyExt::UpdateResource() {
 void MyExt::LogIn() {
 
     char userName[10];
-    char passWord[16];
+    char passWord[33];
 
     while(1)
     {
@@ -1193,6 +1277,13 @@ void MyExt::LogIn() {
         if(passWord[strlen(passWord)-1] == '\n')
             passWord[strlen(passWord)-1] = '\0';
         system("stty echo");
+
+        strcat(passWord, salty);
+        MD5 iMD5;
+        iMD5.GenerateMD5((unsigned char *) passWord, strlen(passWord));
+        memset(passWord, 0, strlen(passWord));
+        strncpy(passWord, iMD5.ToString().c_str(), 32);
+        passWord[32] = 0;
         printf("\n");
         if(strcmp(userName,user.userName)==0 && strcmp(passWord,user.passWord)==0)
             break;
@@ -1218,11 +1309,7 @@ void MyExt::ShowFileDigest(FCBLink pNode) {
     if(pNode == NULL)
         return;
     printf("%s",pNode->fcb.name);
-
-    if(pNode->fcb.attr == 1)
-    {
-        printf("/");
-    }
+    
     printf("\n");
 
 }

@@ -24,7 +24,7 @@ public:
     unsigned char type;    //1B 0-read-only, 1-read-write
     time_t createdTime;    //8B create time of file
     time_t lastChangeTime; //8B last change time，unix time
-    unsigned int addr[12]; //12*4B container index file [10] dir[11]
+    unsigned int addr[12]; //12*4B 
     unsigned int blockId;  //4B data block id
 };
 

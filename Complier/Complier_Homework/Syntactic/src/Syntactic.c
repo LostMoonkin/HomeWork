@@ -82,10 +82,8 @@ void next()
             if (*src == '=') {
                 src++;
                 token = Assign;
-            } else {
-                token = Eof;
             }
-
+            
             return;
         } else if (token == '<') {
             //parse <, <=, <>
@@ -112,7 +110,7 @@ void next()
             }
             return;
 
-        } else if (token == '~' || token == ';' || token == '(' || token == ')' || token == ']' || token == ',' || token == ':') {
+        } else if (token == '~' || token == ';' || token == '(' || token == ')' || token == ']' || token == ',' ) {
             //parse other token
             return;
         } else {

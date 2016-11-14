@@ -9,10 +9,11 @@
 #include <string>
 #include <algorithm>
 #include <sys/types.h>
-#include "header/FCB.h"
-#include "header/SuperBlock.h"
-#include "header/INode.h"
-#include "header/User.h"
+#include "MD5.h"
+#include "FCB.h"
+#include "SuperBlock.h"
+#include "INode.h"
+#include "User.h"
 
 using namespace std;
 
@@ -58,7 +59,7 @@ public:
     int Read(const char * fileName);
     int Write(const char * fileName, unsigned int method);
     int Rm(const char * fileName);
-    int Mv(const char * fileName, char* newFileName);
+    int Mv(const char * fileName, const char* newFileName);
     int Cp(const char * src, char* dst);
     int Chmod(const char * Filename, unsigned char type);
 
@@ -79,6 +80,7 @@ private:
 
     const int blockNum;
     const int blockSize;
+    const char * salty = "e.t/";
     unsigned char * blockBitMap;
     unsigned char * iNodeBitMap;
 

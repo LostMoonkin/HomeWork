@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7060B7685A404862A730460F"
+               BlueprintIdentifier = "D470C2950FDD430495346D79"
                BuildableName = "ZERO_CHECK"
                BlueprintName = "ZERO_CHECK"
-               ReferencedContainer = "container:xcode/SimpleFileSystem.xcodeproj">
+               ReferencedContainer = "container:Xcode/SimpleFileSystem.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7060B7685A404862A730460F"
+            BlueprintIdentifier = "D470C2950FDD430495346D79"
             BuildableName = "ZERO_CHECK"
             BlueprintName = "ZERO_CHECK"
-            ReferencedContainer = "container:xcode/SimpleFileSystem.xcodeproj">
+            ReferencedContainer = "container:Xcode/SimpleFileSystem.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7060B7685A404862A730460F"
+            BlueprintIdentifier = "D470C2950FDD430495346D79"
             BuildableName = "ZERO_CHECK"
             BlueprintName = "ZERO_CHECK"
-            ReferencedContainer = "container:xcode/SimpleFileSystem.xcodeproj">
+            ReferencedContainer = "container:Xcode/SimpleFileSystem.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

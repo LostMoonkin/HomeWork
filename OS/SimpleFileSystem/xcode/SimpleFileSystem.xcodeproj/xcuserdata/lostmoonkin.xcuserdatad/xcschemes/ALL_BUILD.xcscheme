@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "79109468CBD246388F3D2056"
+               BlueprintIdentifier = "DA1C5CAF49814F08B116F34B"
                BuildableName = "ALL_BUILD"
                BlueprintName = "ALL_BUILD"
-               ReferencedContainer = "container:xcode/SimpleFileSystem.xcodeproj">
+               ReferencedContainer = "container:Xcode/SimpleFileSystem.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "79109468CBD246388F3D2056"
+            BlueprintIdentifier = "DA1C5CAF49814F08B116F34B"
             BuildableName = "ALL_BUILD"
             BlueprintName = "ALL_BUILD"
-            ReferencedContainer = "container:xcode/SimpleFileSystem.xcodeproj">
+            ReferencedContainer = "container:Xcode/SimpleFileSystem.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "79109468CBD246388F3D2056"
+            BlueprintIdentifier = "DA1C5CAF49814F08B116F34B"
             BuildableName = "ALL_BUILD"
             BlueprintName = "ALL_BUILD"
-            ReferencedContainer = "container:xcode/SimpleFileSystem.xcodeproj">
+            ReferencedContainer = "container:Xcode/SimpleFileSystem.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

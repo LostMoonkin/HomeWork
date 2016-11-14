@@ -5,11 +5,10 @@
 #ifndef SIMPLEFILESYSTEM_USER_H
 #define SIMPLEFILESYSTEM_USER_H
 
-
 class User {
 public:
     char userName[10];
-    char passWord[16];
+    char passWord[33];
 };
 
 typedef User * UserPointer;
