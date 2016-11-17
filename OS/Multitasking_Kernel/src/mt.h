@@ -23,6 +23,7 @@ void interrupt NewInt8ForHPF(void);
 void interrupt SelectSwitch(void);
 void interrupt SwitchTS(void);
 void interrupt SWitchHPF(void);
+void SetTaskPriority(int taskId, int level);
 
 TCBPointer FindNextAvaliableTask(void);
 

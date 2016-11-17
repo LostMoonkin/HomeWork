@@ -221,9 +221,7 @@ void statement() {
             statement();
         }
         match(End);
-    } else if (token == ';') {
-        match(';');
-    } else {
+    }  else {
         expression(Assign);
         match(';');
     }

@@ -152,6 +152,19 @@ void Over()
     enable();
 }
 
+void SetTaskPriority(int taskId, int level) 
+{
+    int i = 1;
+    if (taskId == 0) {
+        return;
+    }
+
+    if (tcb_list[taskId]->status == READY) {
+        tcb_list[taskId]->level = level;
+        printf("\nset task: %s priority to level: %d\n", tcb_list[taskId]->name, level);
+    }
+}
+
 void interrupt SelectSwitch()
 {
     if (switch_method == TS) {
@@ -211,7 +224,7 @@ void interrupt SwitchTS()
 
 void interrupt SWitchHPF()
 {
-    int switch_method = 0;
+    int switch_method = 0, i;
     TCBPointer temp_task = NULL;
     disable();
     time_count = 0;
@@ -261,6 +274,18 @@ void interrupt SWitchHPF()
         _SS = task->ss;
         _SP = task->sp;
         task->status = RUNNING;
+        
+        if (task->id != 0) {
+            task->level += 1;
+        }
+
+        /*
+        for (i = 1; i < NTCB; i++) {
+            if (tcb_list[i]->status == READY && tcb_list[i]->level > 0) {
+                tcb_list[i]->level -= 1;
+            }
+        }
+        */
     }
     enable();
 }
