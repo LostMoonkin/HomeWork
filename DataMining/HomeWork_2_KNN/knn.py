@@ -167,7 +167,7 @@ def knn(dist_func, dmr_data, dmr_set, k_num, dmr_avg=None):
         if dmr_temp.label not in res:
             res[dmr_temp.label] = 0
 
-    top_k = heapq.nlargest(k_num, k)
+    top_k = heapq.nlargest(k_num, k) if dist_func != get_dist_euclidean else heapq.nsmallest(k_num, k)
     for (rate, label, index) in top_k:
         res[label] += 1
 
@@ -180,11 +180,11 @@ def knn(dist_func, dmr_data, dmr_set, k_num, dmr_avg=None):
     return max_label
 
 
-def loocv(dmr_data, dist_func, dmr_set, k_num):
+def loocv(dmr_data, dist_func, dmr_set, k_num, dmr_avg=None):
 
     dmr_set = list(set(dmr_set) - set([dmr_data]))
 
-    label = knn(dist_func, dmr_data, dmr_set, k_num)
+    label = knn(dist_func, dmr_data, dmr_set, k_num, dmr_avg)
 
     return label == dmr_data.label
 
@@ -246,7 +246,7 @@ if __name__ == '__main__':
 
     for k_num in range(1, int(math.sqrt(len(dmr_set)))):
         temp_rate = test_cross_count(
-            cross_count, get_dist_adjust_cosine, k_num, dmr_set)
+            cross_count, dist_func, k_num, dmr_set, dmr_attr_avg)
         if temp_rate > rate_max:
             rate_max = temp_rate
             k_max = k_num
@@ -264,7 +264,7 @@ if __name__ == '__main__':
     for k_num in range(1, int(math.sqrt(len(dmr_set)))):
         count = 0
         for data in dmr_set:
-            count += 1 if loocv(data, dist_func, dmr_set, k_num) else 0
+            count += 1 if loocv(data, dist_func, dmr_set, k_num, dmr_attr_avg) else 0
         if count > count_max:
             count_max = count
             k_max = k_num
