@@ -75,6 +75,13 @@ def load_dmr(label_file, data_file):
     #         data[index][i] /= attr_maxs[i]
 
     for i in range(len(data)):
+        attr_max, attr_min = 0, 1000
+        for j in range(len(data[0])):
+            attr_max, attr_min = max(attr_max, data[i][j]), min(attr_min, data[i][j])
+        for j in range(len(data[0])):
+            data[i][j] = (data[i][j] - attr_min) / (attr_max - attr_min)
+
+    for i in range(len(data)):
         dmr_set.append(Dmr(labels[i], data[i], i))
 
     return dmr_set, dmr_attr_avg

@@ -263,3 +263,54 @@ best k for the loocv test: 1
 2. 距离公式计算/选择存在问题
 3. 未对实验数据进行处理，因为实验数据中，A和C列的数值相对其他列来说，差距过大。但尝试一些处理方法之后，并没有产生效果，暂时也未想到更好的方法
 4. 1,2,3共同影响
+
+
+#Update 11.19.2016
+
+对数据做了归一化处理，归一化之后使用欧氏距离准确率提升较大:
+
+```
+kanouumekitas-MacBook-Pro:HomeWork_2_KNN lostmoonkin$ python3 knn.py -l data/dmr_label.txt -d data/dmr_data.xls -c
+Start cross_validation Test:
+ten fold cross validation(knn: k = 1 ): 0.571
+ten fold cross validation(knn: k = 2 ): 0.606
+ten fold cross validation(knn: k = 3 ): 0.638
+ten fold cross validation(knn: k = 4 ): 0.627
+ten fold cross validation(knn: k = 5 ): 0.637
+ten fold cross validation(knn: k = 6 ): 0.614
+ten fold cross validation(knn: k = 7 ): 0.621
+ten fold cross validation(knn: k = 8 ): 0.595
+ten fold cross validation test finished.
+best k for the test data: 3
+Start loocv test:
+k = 1
+num of data: 96
+passed: 54 56.25%
+k = 2
+num of data: 96
+passed: 58 60.42%
+k = 3
+num of data: 96
+passed: 62 64.58%
+k = 4
+num of data: 96
+passed: 60 62.50%
+k = 5
+num of data: 96
+passed: 61 63.54%
+k = 6
+num of data: 96
+passed: 60 62.50%
+k = 7
+num of data: 96
+passed: 61 63.54%
+k = 8
+num of data: 96
+passed: 58 60.42%
+loocv test finished.
+best k for the loocv test: 3
+```
+
+基本达到了皮尔森指数和余弦函数的准确率。
+
+归一化函数使用 new_x = (x - min_x) / (max_x - min_x)
