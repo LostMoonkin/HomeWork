@@ -22,7 +22,7 @@ class Dmr:
 def wrong_input():
     print('Wrong Input.')
     print(
-        'Use ./knn.py [-l] {label file} [-d] {data file(*.xls)} [dist func] to run the code.\n')
+        'Use python3 knn.py [-l] {label file} [-d] {data file(*.xls)} [dist func] to run the code.\n')
     print(
         '[dist func]:\n' +
         '            [-c] cosine\n' +
