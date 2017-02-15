@@ -23,7 +23,9 @@ jacobi(int n, double ** mat, double * x, double * b) {
     static int count = 0;
 
     count ++;
-    pre_x = (double *) calloc(n, sizeof(double));
+    if (count == 1) {
+        pre_x = (double *) calloc(n, sizeof(double));
+    }
 
     for (int i = 0; i < n; i++) {
         pre_x[i] = x[i];
@@ -51,7 +53,9 @@ int gauss(int n, double ** mat, double * x, double * b) {
     static int count = 0;
 
     count ++;
-    pre_x = (double *) calloc(n, sizeof(double));
+    if (count == 1) {
+        pre_x = (double *) calloc(n, sizeof(double));
+    }
 
     for (int i = 0; i < n; i++) {
         pre_x[i] = x[i];
@@ -100,6 +104,7 @@ main() {
     cout << "Input 1 X N Matrix b:" << endl;
     for (int i = 0; i < n; i++) {
         cin >> b[i];
+        x[i] = 0;
     }
 
     cout << endl << "Exp = " << esp << ", jacobi:" << endl;

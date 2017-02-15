@@ -173,5 +173,5 @@ if __name__ == '__main__':
         wrong_input()
 
     for s in strings:
-        res = 'passed' if parse_string(dfa, s) else 'filed'
+        res = 'passed' if parse_string(dfa, s) else 'failed'
         print('[' + s + ']' + ' ' + res)
